@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 4px solid #111;
+}
+
+header button {
+    border: none;
+    width: 25%;
+    margin: 0;
+    padding: 10px 0;
+    float: left;
+
+    font-size: 18pt;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+header button:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+aside {
+    width: 20vw;
+    background-color: #fff;
+    float: left;
+    background-color: #333;
+}
+
+aside input[type="range"] {
+    margin: 20px 5%;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 90%;
+    border-radius: 8px;
+}
+
+aside #slider1 {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 100%);
+}
+
+aside #slider2 {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,255,0,1) 100%);
+}
+
+aside #slider3 {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,255,1) 100%);
+}
+
+/* Thumb Styles */
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    border: none; /*Removes extra border from FF*/
+    border-radius: 0; /*Removes default border-radius from FF*/
+}
+
+/* remove default */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/* Chrome, Safari, Opera, and Edge thumb */
+aside input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 8px;
+    background: #222222; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+aside input[type="range"]:focus::-webkit-slider-thumb {
+    background-color: #FFFFFF;
+}
+
+/* Firefox thumb */
+aside input[type="range"]:focus::-moz-range-thumb {
+    background-color: #FFFFFF;
+}
+
+aside p {
+    text-align: center;
+    padding: 0 8px;
+    color: var(--text);
+}
+
+#palette {
+    width: 75vw;
+    height: 80vh;
+    display: grid;
+    margin: 100px 20vw;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+    background-color: #555;
+}
+
+#palette .color {
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 0;
+}
+
+#palette #selected {
+    outline: 2px solid #ccc;
+    box-shadow: 0 0 16px #000;
+    z-index: 1;
+}
+
+#palette #selected button {
+    background-color: rgba(33, 33, 33, 0.75);
+}
+
+#palette .color p {
+    height: 100%;
+    margin: 0;
+    line-height: 2;
+    grid-column: span 2;
+
+    font-size: 14pt;
+    color: var(--text);
+    background-color: rgba(33, 33, 33, 0.33);
+}
+
+#palette .color button {
+    width: 100%;
+    margin: 0 0;
+    padding: 10px 0;
+    border: none;
+    grid-row: -1;
+
+    background-color: rgba(33, 33, 33, 0.5);
+    font-size: 14pt;
+    color: var(--text);
+    cursor: pointer;
+}
+
+#palette .color button:hover {
+    background-color: #222;
+}
+
+
+:root {
+    --background: #333;
+    --text: #eee;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <button class="viewstate" onclick="setViewState(0)">RGB</button>
+        <button class="viewstate" onclick="setViewState(1)">HEX</button>
+        <button class="viewstate">HSV</button>
+        <button class="viewstate">HSL</button>
+    </header>
+    <aside>
+        <input id="slider1" type="range" min="0" max="255" value="0" oninput="editColor()">
+        <input id="slider2" type="range" min="0" max="255" value="0" oninput="editColor()">
+        <input id="slider3" type="range" min="0" max="255" value="0" oninput="editColor()">
+        <p>( <span id="input1"></span>, <span id="input2"></span>, <span id="input3"></span> )</p>
+    </aside>
+    <main id="palette">
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
