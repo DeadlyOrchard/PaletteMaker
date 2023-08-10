@@ -226,7 +226,7 @@ function editColor() {
 
     for (let i = 0; i < colorPalette.length; i++) {
         if (colorPalette[i].isSelected()) {
-            color = colorPalette[i];
+            let color = colorPalette[i];
             switch(viewstate) {
                 case 0:
                     color.setColorValueByRGB(sliders[0].value, sliders[1].value, sliders[2].value);
@@ -245,13 +245,16 @@ function editColor() {
 }
 
 function copyColor(paletteIndex) {
-    selectColor(paletteIndex);
-    rgb = [
-        document.getElementById("input1").innerHTML,
-        document.getElementById("input2").innerHTML,
-        document.getElementById("input3").innerHTML
-    ];
-    navigator.clipboard.writeText("(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
+    // after selecting a color, inputs are set to that color's values
+    let color = colorPalette[paletteIndex];
+    switch(viewstate) {
+        case 0:
+            navigator.clipboard.writeText("(" + color.getColorValue().getRgbStr() + ")");
+            break;
+        case 1:
+            navigator.clipboard.writeText(color.getColorValue().getHexStr());
+            break;
+    }
     
 }
 
